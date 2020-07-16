@@ -4,7 +4,7 @@
     <url>
       <loc>/categories/</loc>
       
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -16,9 +16,37 @@
     </url>
   
     <url>
-      <loc>/tags/development/</loc>
+      <loc>/2020/con-checker-shellmates-writeup/</loc>
       
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/ctf/</loc>
+      
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/cybertalents/</loc>
+      
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -32,21 +60,7 @@
     <url>
       <loc>/</loc>
       
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>/2020/goisforlovers/</loc>
-      
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -60,7 +74,35 @@
     <url>
       <loc>/posts/</loc>
       
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/2020/cybertalents-algeria-quals-2020-writeup/</loc>
+      
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/shellmates/</loc>
+      
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -74,7 +116,7 @@
     <url>
       <loc>/tags/</loc>
       
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -86,9 +128,23 @@
     </url>
   
     <url>
-      <loc>/categories/testing/</loc>
+      <loc>/tags/web-security/</loc>
       
-      <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/categories/writeups/</loc>
+      
+      <lastmod>2020-07-11T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
