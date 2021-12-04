@@ -18,6 +18,36 @@
     <url>
       <loc>/categories/</loc>
       
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/categories/category-02/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/golang/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
       
       <changefreq>monthly</changefreq>
       
@@ -30,6 +60,64 @@
     <url>
       <loc>/</loc>
       
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/posts/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/python/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/tag-1/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/tag-2/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
       
       <changefreq>monthly</changefreq>
       
@@ -41,6 +129,92 @@
   
     <url>
       <loc>/tags/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/categories/testing/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/2021/testing/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/tags/writeup/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/projects/migrate-from-jekyll/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/projects/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>/categories/uncategorized/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
