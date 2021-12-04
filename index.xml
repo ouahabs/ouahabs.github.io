@@ -1,18 +1,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>habs on habs</title>
-    <link>https://ouahabs.github.io/</link>
+    <link>/</link>
     <description>Recent content in habs on habs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <atom:link href="https://ouahabs.github.io/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>https://ouahabs.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ouahabs.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>&lt;h1 id=&#34;-whoami&#34;&gt;$ whoami&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;My name is Habs (habs for aesthetic purposes), short for Abdelouahab, a 3rd year Computer Science student at The Higher School of Computer Science—Sidi Bel Abbes. (a.k.a &lt;a href=&#34;http://www.esi-sba.dz/fr/&#34;&gt;ESI SBA&lt;/a&gt;)&lt;/p&gt;
