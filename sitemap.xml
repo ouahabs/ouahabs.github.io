@@ -44,6 +44,20 @@
     </url>
   
     <url>
+      <loc>/posts/2021/filler/</loc>
+      
+      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>/tags/golang/</loc>
       
       <lastmod>2021-12-04T00:00:00+00:00</lastmod>
@@ -143,20 +157,6 @@
   
     <url>
       <loc>/categories/testing/</loc>
-      
-      <lastmod>2021-12-04T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>/posts/2021/testing/</loc>
       
       <lastmod>2021-12-04T00:00:00+00:00</lastmod>
       
