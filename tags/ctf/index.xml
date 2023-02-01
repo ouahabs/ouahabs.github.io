@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on habs</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on habs</description>
+    <title>CTF on habs</title>
+    <link>/tags/ctf/</link>
+    <description>Recent content in CTF on habs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Connectivity Checker (Shellmates)  —  Write-up.</title>
       <link>/posts/2020/con-checker-shellmates-writeup/</link>
