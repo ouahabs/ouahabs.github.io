@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'Playwrite US Traditional';
+	src: url('./assets/fonts/playwrite-us-trad-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Space Mono';
+	src: url('./assets/fonts/space-mono-v14-regular.woff2') format('woff2');
+}
+
+body {
+	background-color: #000; 
+	color: #FFF;
+	font-family: 'Space Mono'
+}
+	
+#habs {
+	font-family: 'Playwrite US Traditional';
+}
+
+a {
+	color: #FFF;
+	font-weight: 800;
+}
+
+.nav {
+	list-style: none;
+	display: flex;
+	gap: 1em;
+	padding: 0;
+}
+
